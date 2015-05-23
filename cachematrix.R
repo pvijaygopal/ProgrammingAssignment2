@@ -1,5 +1,6 @@
 ## Put comments here that give an overall description of what your
 ## functions do
+
 ## This is a two part function to retrieve cached data in case of complex, time consuming operations
 ## such as calculating the inverse of a matrix
 ## This program assumes that the inputted matrix is invertible; i.e. square non-singular matrix
@@ -25,10 +26,11 @@ makeCacheMatrix <- function(x = matrix())
                 inv <<- NULL
                 
         }
-        get <- function() x  ##gets the new matrix
-        setinv <- function(solve) ## calls function solve to calculate inverse
-                inv <<- solve ## assigns inv = returned inv value from solve function 
-        getinv <- function() ## gets the inverse if already present in cache
+        get <- function() 
+                x                   ##gets the new matrix
+        setinv <- function(solve)   ## calls function solve to calculate inverse
+                inv <<- solve       ## assigns inv = returned inv value from solve function 
+        getinv <- function()        ## gets the inverse if already present in cache
                 inv
         list(set = set, get = get,setinv = setinv, getinv = getinv)  ##returns all updated values        
 
